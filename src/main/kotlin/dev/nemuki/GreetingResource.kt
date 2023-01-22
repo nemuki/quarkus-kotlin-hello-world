@@ -2,13 +2,10 @@ package dev.nemuki
 
 import javax.ws.rs.GET
 import javax.ws.rs.Path
-import javax.ws.rs.Produces
-import javax.ws.rs.core.MediaType
 
 @Path("/hello")
 class GreetingResource {
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    fun hello() = "Hello from RESTEasy"
+    fun hello() = Greeting(message = "hello")
 }
