@@ -1,5 +1,6 @@
 package dev.nemuki
 
+import org.jboss.resteasy.reactive.RestQuery
 import javax.ws.rs.GET
 import javax.ws.rs.Path
 
@@ -7,5 +8,5 @@ import javax.ws.rs.Path
 class GreetingResource {
 
     @GET
-    fun hello() = Greeting(message = "hello")
+    fun hello(@RestQuery name: String?) = Greeting(message = "hello, ${name ?: "world"}")
 }
