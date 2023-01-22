@@ -32,5 +32,9 @@ jobs:
         with:
           reviewdog_version: latest
 
-      - name: list reviewdog
-        run: reviewdog -list
+      - name: detekt
+        run: ./gradlew detekt
+
+      - name: reviewdog
+        if: ${{ always() }}
+        run: reviewdog -f=checkstyle -name="detekt" -reporter=github-pr-check < ./build/reports/detekt/detekt.xml
