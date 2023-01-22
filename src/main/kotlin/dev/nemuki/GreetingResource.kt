@@ -1,14 +1,12 @@
 package dev.nemuki
 
+import org.jboss.resteasy.reactive.RestQuery
 import javax.ws.rs.GET
 import javax.ws.rs.Path
-import javax.ws.rs.Produces
-import javax.ws.rs.core.MediaType
 
 @Path("/hello")
 class GreetingResource {
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    fun hello() = "Hello from RESTEasy"
+    fun hello(@RestQuery name: String?) = Greeting(message = "hello, ${name ?: "world"}")
 }
