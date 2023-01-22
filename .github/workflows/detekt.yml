@@ -35,5 +35,5 @@ jobs:
       - name: reviewdog
         if: ${{ always() }}
         env:
-          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.REVIEWDOG_GITHUB_TOKEN }}
         run: reviewdog -f=checkstyle -name="detekt" -reporter=github-pr-review < ./build/reports/detekt/detekt.xml
