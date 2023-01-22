@@ -1,21 +1,16 @@
-name: Detekt
+name: Static code analysis
 
 on:
   push:
   pull_request:
     branches: [ "main" ]
 
-permissions:
-  checks: write
-  contents: read
-  pull-requests: write
-
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build:
+  detekt:
     runs-on: ubuntu-latest
 
     steps:
