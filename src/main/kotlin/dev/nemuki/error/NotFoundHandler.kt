@@ -9,8 +9,5 @@ import javax.ws.rs.ext.Provider
 class NotFoundHandler : ExceptionMapper<NotFoundException> {
 
     override fun toResponse(exception: NotFoundException): Response =
-        Response
-            .status(Response.Status.NOT_FOUND)
-            .entity(ErrorResponse("no handler found"))
-            .build()
+        Response.status(Response.Status.NOT_FOUND).entity(ErrorResponse("no handler found")).build()
 }

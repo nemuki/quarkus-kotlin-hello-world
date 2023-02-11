@@ -8,8 +8,5 @@ import javax.ws.rs.ext.Provider
 class ExceptionHandler : ExceptionMapper<Throwable> {
 
     override fun toResponse(exception: Throwable): Response =
-        Response
-            .serverError()
-            .entity(ErrorResponse("something wrong ;-("))
-            .build()
+        Response.serverError().entity(ErrorResponse("something wrong ;-(")).build()
 }
