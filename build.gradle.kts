@@ -1,6 +1,6 @@
 plugins {
-    kotlin("jvm") version "1.7.21"
-    kotlin("plugin.allopen") version "1.7.21"
+    kotlin("jvm") version "1.8.10"
+    kotlin("plugin.allopen") version "1.8.10"
     id("io.quarkus")
     id("io.gitlab.arturbosch.detekt").version("1.22.0")
 }
@@ -16,7 +16,7 @@ val quarkusPlatformVersion: String by project
 
 dependencies {
     implementation("io.quarkus:quarkus-config-yaml")
-    implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
+    implementation(enforcedPlatform("$quarkusPlatformGroupId:$quarkusPlatformArtifactId:$quarkusPlatformVersion"))
     implementation("io.quarkus:quarkus-kotlin")
     implementation("io.quarkus:quarkus-resteasy-reactive-jackson")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
