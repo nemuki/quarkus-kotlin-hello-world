@@ -1,2 +1,8 @@
+quarkus:
+  log:
+    category:
+      dev.nemuki:
+        level: DEBUG
+
 greeting:
   message: my friend
