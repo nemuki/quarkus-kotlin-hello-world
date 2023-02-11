@@ -1,4 +1,4 @@
-package dev.nemuki.error
+package dev.nemuki.entity
 
 data class ErrorResponse(
     val reason: String

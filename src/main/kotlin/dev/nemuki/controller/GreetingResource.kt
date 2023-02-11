@@ -1,5 +1,6 @@
-package dev.nemuki
+package dev.nemuki.controller
 
+import dev.nemuki.entity.Greeting
 import org.eclipse.microprofile.config.inject.ConfigProperty
 import org.jboss.resteasy.reactive.RestQuery
 import javax.validation.constraints.Size

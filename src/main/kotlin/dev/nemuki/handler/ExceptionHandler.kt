@@ -1,5 +1,6 @@
-package dev.nemuki.error
+package dev.nemuki.handler
 
+import dev.nemuki.entity.ErrorResponse
 import javax.ws.rs.core.Response
 import javax.ws.rs.ext.ExceptionMapper
 import javax.ws.rs.ext.Provider
