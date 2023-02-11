@@ -1,6 +1,7 @@
 package dev.nemuki
 
 import org.jboss.resteasy.reactive.RestQuery
+import javax.validation.constraints.Size
 import javax.ws.rs.GET
 import javax.ws.rs.Path
 
@@ -8,5 +9,9 @@ import javax.ws.rs.Path
 class GreetingResource {
 
     @GET
-    fun hello(@RestQuery name: String?) = Greeting(message = "hello, ${name ?: "world"}")
+    fun hello(
+        @Size(min = 3, max = 10)
+        @RestQuery
+        name: String?
+    ) = Greeting(message = "hello, ${name ?: "world"}")
 }
